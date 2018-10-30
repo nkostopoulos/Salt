@@ -1,0 +1,23 @@
+Master:  
+  sudo apt-get update
+  sudo apt-get install -y salt-master
+
+Configure master:
+  sudo vim /etc/salt/master
+    edit: interface: 10.0.0.1 (master's IP)
+
+  sudo service salt-master restart
+  
+List minion keys (AES):
+  salt-key -L
+  
+Accept minion keys (AES)L
+  salt-key -A
+
+Minion:
+  sudo apt-get update
+  sudo apt-get install -y salt-minion
+  
+Configure minion:
+  sudo vim /etc/salt/minion
+  edit: master: 10.0.0.1 (master's IP)
