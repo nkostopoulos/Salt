@@ -7,21 +7,21 @@ def save_output(command):
         (out,err) = proc.communicate()
 	return out
 
+def get_minion_interfaces():
+	command = "salt '*' network.interfaces --output json"
+	minions_info_json = json.loads(save_output(command))
+	output_information = dict()
+	for minion in minions_info_json.keys():
+		minion_name = str(minion)
+		minion_json = minions_info_json[minion]
+		minion_interfaces = list()
+		for interface in minion_json.keys():
+			minion_interfaces.append(str(interface))
+		output_information[minion_name] = minion_interfaces
+	
+	print(output_information)
+
+
 
 if __name__ == "__main__":
-	get_interfaces_command = "salt '*' network.interfaces --output json"
-	minions_info_json = json.loads(save_output(get_interfaces_command))
-	for minion in minions_info_json.keys():
-		print("Configuring Minion: ",str(minion))
-		
-		hostname = raw_input("Give hostname for your minion: ")
-		print(hostname)
-
-		
-
-
-		minion_json = minions_info_json[minion]
-		minion_interfaces = set()
-		for interface in minion_json.keys():
-			minion_interfaces.add(str(interface))
-		print("Minion: " + hostname + " interfaces: " + str(minion_interfaces))
+	get_minion_interfaces()
