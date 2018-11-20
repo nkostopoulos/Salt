@@ -1,4 +1,4 @@
 base:
   '*':
-    - network_configuration
-    - package_template
+    - template_network_configuration
+    - packages_template

@@ -1,3 +1,4 @@
 base:
   '*':
-    - default
+    - network_variables
+    - package_variables
