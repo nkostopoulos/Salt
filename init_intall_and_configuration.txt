@@ -20,4 +20,10 @@ Minion:
   
 Configure minion:
   sudo vim /etc/salt/minion
-  edit: master: 10.0.0.1 (master's IP)
+  edit: master: 10.0.0.1 (master's IP)  
+  
+  
+Directories (can be altered by editing /etc/salt/master):  
+/srv/salt: include state files there  
+/srv/pillar: include pillar  
+

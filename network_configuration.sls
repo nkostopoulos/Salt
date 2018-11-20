@@ -1,7 +1,7 @@
 system:
   network.system:
     - enabled: True
-    - hostname: lolololo.example.com
+    - hostname: slave.example.com
     - apply_hostname: True
     - gateway: 10.0.2.2
     - gatewaydev: enp0s3
