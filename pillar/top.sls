@@ -1,4 +1,3 @@
 base:
   '*':
-    - network_variables
-    - package_variables
+    - iptables_variables

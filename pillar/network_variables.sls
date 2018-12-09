@@ -1,3 +1,5 @@
+temp_package: hello
+my_packages: ['vim','traceroute']
 system_hostname: sklavos.example.com
 default_gateway: 10.0.2.2
 gateway_interface: enp0s3

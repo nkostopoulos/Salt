@@ -2,16 +2,16 @@ deny new dns:
   iptables.delete:
     - table: filter
     - chain: INPUT
-    - jump: ACCEPT
+    - jump: DROP
     - match: state
-    - connstate: ESTABLISHED
+    - connstate: NEW
     - dport: 53
     - protocol: udp
     - sport: 1025:65535
     - save: True
 
 deny icmp:
-  iptables.append:
+  iptables.delete:
     - table: filter
     - chain: INPUT
     - jump: DROP
