@@ -1,6 +1,6 @@
 # Upgrade the system via apt-get -y upgrade
-#pkg.upgrade:
-#  module.run
+pkg.upgrade:
+  module.run
 
 # Install packages required for the installation of php version 7.2
 install required packages:
