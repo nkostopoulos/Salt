@@ -1,11 +1,11 @@
-# Install nginx package
-install nginx package:
+# Install apache package
+install apache package:
   pkg.installed:
     - pkgs:
       - apache2
     - refresh: True
 
-# Restart nginx service
+# Restart apache service
 apache2:
   service.running:
     - enable: True
